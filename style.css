@@ -126,6 +126,7 @@ body {
   }
   .flags_section {
     margin: auto;
+    width: 100%;
   }
 }
 
