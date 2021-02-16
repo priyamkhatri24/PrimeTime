@@ -1,0 +1,138 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  height: calc(100vh-40px);
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  background: linear-gradient(rgb(36, 51, 139, 0.9), rgba(36, 51, 139, 0.9)),
+    url("./back.jpg");
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: auto;
+  color: antiquewhite;
+  /* flex-flow: wrap; */
+}
+.lower_body {
+  display: flex;
+  /* flex-flow: wrap; */
+}
+.timer_section {
+  width: 100%;
+  border-right: 2px solid rgba(0, 0, 124, 0.473);
+}
+.heading_title {
+  margin: 40px auto 80px auto;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 500;
+  cursor: default;
+}
+.heading_title span {
+  font-weight: 300;
+}
+.time {
+  font-size: 80px;
+  font-weight: 400;
+  width: 60%;
+  min-width: 450px;
+  text-align: center;
+  margin: 40px auto 20px auto;
+  border: 1px antiquewhite solid;
+}
+.control_btns {
+  display: flex;
+  justify-content: center;
+}
+.nav_list {
+  display: flex;
+  margin: 40px auto;
+  justify-content: space-around;
+  width: 80%;
+}
+.nav_list li {
+  list-style: none;
+  margin: 10px;
+  cursor: pointer;
+}
+.active_nav {
+  font-weight: 700;
+}
+.icon {
+  padding: 20px;
+  border: 1px antiquewhite transparent;
+  margin: auto 10px;
+  font-size: 50px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition-duration: 0.3s;
+}
+.icon:hover {
+  box-shadow: 11px 10px 10px -9px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 11px 10px 10px -9px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 11px 10px 10px -9px rgba(0, 0, 0, 0.75);
+  transform: scale(1.05);
+}
+.hidden {
+  visibility: hidden;
+  display: none;
+}
+.flags_section {
+  width: 55%;
+}
+.flags_heading {
+  margin: 50px auto;
+  width: 100%;
+  text-align: center;
+  cursor: default;
+}
+.flag_row {
+  text-align: center;
+  color: black;
+  width: 80%;
+  margin: auto;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.odd {
+  background-color: rgb(81, 136, 153);
+}
+.even {
+  background-color: rgb(140, 197, 214);
+}
+.flagged_time {
+  margin: auto 10%;
+}
+.flag_emoji {
+  margin: auto 10%;
+}
+.footer {
+  margin-top: 90px;
+  text-align: center;
+  width: 100%;
+  justify-content: center;
+  cursor: default;
+  color: rgb(173, 173, 173);
+}
+
+@media screen and (max-width: 870px) {
+  .lower_body {
+    display: flex;
+    flex-flow: wrap;
+  }
+  .timer_section {
+    border-right: transparent;
+  }
+  .flags_section {
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .time {
+    min-width: 300px;
+    width: 60%;
+    font-size: 40px;
+  }
+}

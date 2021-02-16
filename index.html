@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prime Time</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section class="upper_body">
+      <h1 class="heading_title">Prime<span>time</span></h1>
+    </section>
+
+    <section class="lower_body">
+      <section class="timer_section">
+        <ul class="nav_list">
+          <li class="active_nav">Stopwatch</li>
+          <li>Countdown</li>
+        </ul>
+        <div class="timer">
+          <div>
+            <h1 class="time">
+              <span class="hours">00</span>: <span class="mins">00</span>:
+              <span class="secs">00</span>
+            </h1>
+          </div>
+          <div class="control_btns">
+            <ion-icon class="icon stop_icon" name="stop-outline"></ion-icon>
+            <ion-icon class="icon play_icon" name="play-outline"></ion-icon>
+            <ion-icon
+              class="icon pause_icon hidden"
+              name="pause-outline"
+            ></ion-icon>
+            <ion-icon class="icon flag_icon" name="flag-outline"></ion-icon>
+          </div>
+        </div>
+      </section>
+
+      <section class="flags_section">
+        <div class="flags_heading">
+          <p>Flags</p>
+        </div>
+        <div class="flags_list">
+          <!-- <div class="flag_row odd">
+            <h4 class="flag_emoji">🏁</h4>
+            <h4>Flagged at:</h4>
+            <h4 class="flagged_time">00:12:36</h4>
+          </div>
+          <div class="flag_row even">
+            <h4 class="flag_emoji">🏁</h4>
+            <h4>Flagged at:</h4>
+            <h4 class="flagged_time">00:12:36</h4>
+          </div>
+          <div class="flag_row odd">
+            <h4 class="flag_emoji">🏁</h4>
+            <h4>Flagged at:</h4>
+            <h4 class="flagged_time">00:12:36</h4>
+          </div>
+          <div class="flag_row even">
+            <h4 class="flag_emoji">🏁</h4>
+            <h4>Flagged at:</h4>
+            <h4 class="flagged_time">00:12:36</h4>
+          </div> -->
+        </div>
+      </section>
+    </section>
+    <footer class="footer">
+      <p>Project designed and made by Priyam Khatri | All rights reserved</p>
+    </footer>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script src="./script.js"></script>
+    <script
+      nomodule=""
+      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
