@@ -5,8 +5,10 @@ const hours = document.querySelector(".hours");
 const controlBtns = document.querySelector(".control_btns");
 const flagContainer = document.querySelector(".flags_list");
 const navList = document.querySelector(".nav_list");
+const milliSeconds = document.querySelector('.milli_secs')
 const state = {
   min: 0,
+  millisec:0,
   sec: 0,
   hrs: 0,
   minutesPassed: 1,
@@ -33,14 +35,29 @@ const timer = function (time) {
     }, time * 1000);
   });
 };
-
-const controlStopwatch = async function (minutesLength = 10) {
-  for (state.time; ; state.time++) {
-    await timer(1);
+const milliSecondsControl = async function() {
+  for (let msec = 0; msec<100; msec++) {
     if (!state.isCounting) {
       return;
     }
-
+    await timer(0.1)
+    milliSeconds.textContent = formatNumbers(msec)
+  }
+}
+const controlStopwatch = async function (minutesLength = 10) {
+  for (state.time; ; state.time++) {
+  for (let msec = 0; msec<100; msec++) {
+    if (!state.isCounting) {
+      return;
+    }
+    await timer(0.01)
+    document.querySelector(".milli_secs").textContent = formatNumbers(msec)
+    state.millisec = msec
+  }
+  // await timer(0.5);
+    if (!state.isCounting) {
+      return;
+    }
     if (state.time >= minutesLength * state.minutesPassed) {
       ++state.min;
       minutes.textContent = formatNumbers(state.min);
@@ -137,7 +154,7 @@ controlBtns.addEventListener("click", function (e) {
   if (flagBtn) {
     const flag = `${formatNumbers(state.hrs)}:${formatNumbers(
       state.min
-    )}:${formatNumbers(state.sec)}`;
+    )}:${formatNumbers(state.sec)}:${formatNumbers(state.millisec)}`;
     state.flagged.push(flag);
     renderFlags();
   }

@@ -30,14 +30,16 @@ body {
 .heading_title span {
   font-weight: 300;
 }
+
 .time {
-  font-size: 80px;
+  font-size: 70px;
   font-weight: 400;
-  width: 60%;
+  width: 70%;
   min-width: 450px;
   text-align: center;
+  /* text-align: left; */
   margin: 40px auto 20px auto;
-  border: 1px antiquewhite solid;
+  /* border: 1px antiquewhite solid; */
 }
 .control_btns {
   display: flex;
@@ -130,7 +132,7 @@ body {
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 805px) {
   .time {
     min-width: 300px;
     width: 60%;
