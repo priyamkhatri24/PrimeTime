@@ -5,10 +5,10 @@ const hours = document.querySelector(".hours");
 const controlBtns = document.querySelector(".control_btns");
 const flagContainer = document.querySelector(".flags_list");
 const navList = document.querySelector(".nav_list");
-const milliSeconds = document.querySelector('.milli_secs')
+const milliSeconds = document.querySelector(".milli_secs");
 const state = {
   min: 0,
-  millisec:0,
+  millisec: 0,
   sec: 0,
   hrs: 0,
   minutesPassed: 1,
@@ -17,6 +17,7 @@ const state = {
   isCounting: false,
   flagged: [],
 };
+
 const controlNavigation = function () {
   navList.addEventListener("click", function (e) {
     if (!e.target.closest("li")) return;
@@ -28,6 +29,7 @@ const controlNavigation = function () {
     }
   });
 };
+
 const timer = function (time) {
   return new Promise((resolve) => {
     setTimeout(function () {
@@ -35,26 +37,21 @@ const timer = function (time) {
     }, time * 1000);
   });
 };
-const milliSecondsControl = async function() {
-  for (let msec = 0; msec<100; msec++) {
-    if (!state.isCounting) {
-      return;
-    }
-    await timer(0.1)
-    milliSeconds.textContent = formatNumbers(msec)
-  }
-}
-const controlStopwatch = async function (minutesLength = 10) {
+
+const controlStopwatch = async function (minutesLength = 60) {
   for (state.time; ; state.time++) {
-  for (let msec = 0; msec<100; msec++) {
-    if (!state.isCounting) {
-      return;
-    }
-    await timer(0.01)
-    document.querySelector(".milli_secs").textContent = formatNumbers(msec)
-    state.millisec = msec
-  }
-  // await timer(0.5);
+    // for (let msec = 0; msec < 100; msec++) {
+    //   if (!state.isCounting) {
+    //     console.log("returning");
+    //     milliSeconds.textContent = "00";
+    //     return;
+    //   }
+    //   await timer(10);
+    //   milliSeconds.textContent = formatNumbers(msec);
+    //   state.millisec = msec;
+    // }
+    await timer(1);
+
     if (!state.isCounting) {
       return;
     }
@@ -78,6 +75,7 @@ const controlStopwatch = async function (minutesLength = 10) {
     seconds.textContent = formatNumbers(state.sec);
   }
 };
+
 const resetStopwatch = function () {
   state.min = 0;
   state.sec = 0;
@@ -85,6 +83,7 @@ const resetStopwatch = function () {
   state.minutesPassed = 1;
   state.hoursPassed = 1;
   state.time = 1;
+  state.millisec = 0;
 };
 
 const renderBtns = function () {
@@ -152,9 +151,12 @@ controlBtns.addEventListener("click", function (e) {
   }
 
   if (flagBtn) {
+    // const flag = `${formatNumbers(state.hrs)}:${formatNumbers(
+    //   state.min
+    // )}:${formatNumbers(state.sec)}:${formatNumbers(state.millisec)}`;
     const flag = `${formatNumbers(state.hrs)}:${formatNumbers(
       state.min
-    )}:${formatNumbers(state.sec)}:${formatNumbers(state.millisec)}`;
+    )}:${formatNumbers(state.sec)}`;
     state.flagged.push(flag);
     renderFlags();
   }
